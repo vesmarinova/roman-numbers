@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&display=swap');
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-light: #F5E6A3;
+  --color-gold-dark: #A68B2C;
+  --color-cream: #FFF8E7;
+  --color-cream-dark: #F5E6C8;
+  --color-marble: #F2ECE4;
+  --color-roman-red: #8B1A1A;
+  --color-roman-red-light: #C0392B;
+  --color-roman-dark: #2C1810;
+  --color-roman-brown: #5C3A21;
+  --color-correct: #27AE60;
+  --color-correct-bg: #D5F5E3;
+  --color-wrong: #C0392B;
+  --color-wrong-bg: #FADBD8;
+  --font-roman: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-dark) 100%);
+  color: var(--color-roman-dark);
+}
+
+/* Roman serif font utility */
+.font-roman {
+  font-family: var(--font-roman);
+}
+
+/* Card flip animation for memory game */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Confetti keyframes */
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.4s ease-out;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
